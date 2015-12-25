@@ -17,9 +17,13 @@ class ViewController: UIViewController {
     var brain = calculatorBrain()
     
     @IBAction func appendDigit(sender: UIButton) {
+//      every button is sending digit, so now need to identify whitch one is, create local variable
+//      let = constnat, wount change, only set in very begining. little different with var
+//      add ! get pure string type
         let digit = sender.currentTitle!
+        
 //      print("digit = \(digit)")
-//      let = constnat, little different with var
+//      currently there with new digit, if still typing than the digit will add to directly after, otherwise will refresh while add operator
         if userIsInTheMiddleOfTypingANumber {
             display.text = display.text! + digit
         } else{
